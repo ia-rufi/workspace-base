@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { margin: 40px; }
+  body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; color: #2b2b2b; line-height: 1.5; }
+  .header { border-bottom: 3px solid #1f5e4a; padding-bottom: 12px; margin-bottom: 24px; }
+  h1 { color: #1f5e4a; margin: 0; font-size: 26px; }
+  .sub { color: #666; font-size: 13px; margin-top: 4px; }
+  .meta { font-size: 13px; margin-bottom: 20px; }
+  .meta span { display:inline-block; margin-right: 18px; }
+  h2 { color: #1f5e4a; font-size: 18px; border-bottom: 1px solid #ddd; padding-bottom: 6px; margin-top: 28px; }
+  .pieza { margin-bottom: 14px; }
+  .pieza b { font-size: 15px; }
+  .tachado { color:#a00; text-decoration: line-through; }
+  .precio { color:#1f5e4a; font-weight: bold; }
+  table { width:100%; border-collapse: collapse; margin-top: 10px; }
+  td { padding: 8px 6px; border-bottom: 1px solid #eee; }
+  td.r { text-align: right; }
+  .total td { border-top: 2px solid #1f5e4a; border-bottom: none; font-weight: bold; font-size: 16px; color:#1f5e4a; padding-top:12px; }
+  .notas { font-size: 12px; color:#555; margin-top: 24px; background:#f6f6f3; padding: 14px 16px; border-radius: 8px; }
+  .notas li { margin-bottom: 4px; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>Amueblado de Local — Ulúa Inmobiliaria</h1>
+    <div class="sub">Enfoque sencillo y conservador · Documento base</div>
+  </div>
+
+  <div class="meta">
+    <span><b>Cliente:</b> Carlos Alfonso López</span>
+    <span><b>Fecha:</b> 24 de junio de 2026</span>
+  </div>
+
+  <h2>Piezas registradas</h2>
+
+  <div class="pieza">
+    <b>1. Mesa de roble sólido 180×110 cm</b><br>
+    Precio lista: <span class="tachado">$40,000</span> &nbsp;→&nbsp; <span class="precio">$28,000</span> &nbsp;<small>(ahorro $12,000)</small>
+  </div>
+
+  <div class="pieza">
+    <b>2. Sillón seccional en L (terciopelo, olivo/mostaza)</b><br>
+    Un solo sillón con ambos brazos &nbsp;—&nbsp; <span class="precio">$13,200</span>
+  </div>
+
+  <h2>Listado de gastos</h2>
+  <table>
+    <tr><td>Mesa de roble sólido 180×110</td><td class="r">$28,000</td></tr>
+    <tr><td>Sillón seccional en L (terciopelo)</td><td class="r">$13,200</td></tr>
+    <tr class="total"><td>Subtotal</td><td class="r">$41,200 MXN</td></tr>
+  </table>
+
+  <div class="notas">
+    <b>Notas</b>
+    <ul>
+      <li>Cifras conservadoras, solo piezas confirmadas por el cliente.</li>
+      <li>Pendiente: agregar más piezas (fotos/precios) para completar el set.</li>
+      <li>Referencia de estilo enviada: MUNDO IN.</li>
+    </ul>
+  </div>
+</body>
+</html>
