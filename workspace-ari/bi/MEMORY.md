@@ -1,0 +1,1 @@
+# MEMORY.md - Memoria general - Pendientes y Recordatorios

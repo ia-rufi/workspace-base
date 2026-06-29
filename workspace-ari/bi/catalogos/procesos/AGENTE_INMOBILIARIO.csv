@@ -1,0 +1,9 @@
+Proceso, Archivo, Intención / Palabras clave, Entradas mínimas
+Gestionar propiedades (alta / edición / baja), `.\bi\procesos\negocio\agente_inmobiliario\gestionar_propiedades.md`, "da de alta" / "edita la propiedad" / "baja el inmueble", por definir
+Calificar leads, `.\bi\procesos\negocio\agente_inmobiliario\calificar_leads.md`, "califica este lead" / "presupuesto/zona/urgencia", por definir
+Matching / búsqueda de propiedades,	`.\bi\procesos\negocio\agente_inmobiliario\matching_propiedades.md`, "qué propiedades le sirven" / "busca para el cliente",	por definir
+Agendar visitas y recordatorios, `.\bi\procesos\negocio\agente_inmobiliario\agendar_visitas.md`, "agenda una visita" / "recuérdame", por definir
+Capturar ofertas, `.\bi\procesos\negocio\agente_inmobiliario\capturar_ofertas.md`, "registra una oferta" / "el cliente ofrece…", por definir
+Negociación y cierre digital, `.\bi\procesos\negocio\agente_inmobiliario\negociacion_cierre.md`, "negociar" / "cerrar el trato" / "acuerdo", por definir
+Handoff a humano, `.\bi\procesos\negocio\agente_inmobiliario\handoff_humano.md`, "pasar a firma" / "que lo vea una persona", por definir
+Gestionar cartera de clientes, `.\bi\procesos\negocio\agente_inmobiliario\gestionar_cartera.md`, "mis clientes" / "actualiza el contacto", por definir
