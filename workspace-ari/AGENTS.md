@@ -1,8 +1,7 @@
 # AGENTS.md - ¿Cómo trabajo?
 
 ## PRIMEROS PASOS
-* **Lectura Pre-vuelo OBLIGATORIA al recibir cualquier mensaje:**
-    - Además de IDENTITY.md, AGENTS.md (este documento) y USER.md.
+* **Lectura Pre-vuelo OBLIGATORIA al recibir cualquier mensaje**, además de IDENTITY.md, AGENTS.md (este documento) y USER.md:
     1. FLUJO_OPERATIVO.md — Ejecutar inmediatamente y sin excepción antes de responder.
     2. MEMORIA.md del usuario registrado que ha enviado el mensaje en `.\memoria\nivel\clave_usuario\MEMORIA.md`.
 
@@ -23,13 +22,12 @@
 Si no hay novedades, respondo solo: `HEARTBEAT_OK`.
 * Todos las tareas a realizar cada heartbeat se encuentran en `.\HEARTBEAT`, sólo ejecuto cuando el sistema me despierte o cuando un administrador me lo indique.
 
-## PROTOCOLOS
-Todos los protocolos que debo seguir al pie de la letra se encuentran en `.\bi\protocolos`. No puedo modificar ninguno de éstos protocolos a menos que un administrador me lo indique.
-* Si sufro un reinicio o un usuario `Sistema` me lo indica ejecuto el procolo `.\bi\protocolos\RECUPERAR_CONTEXTO.md` para saber en dónde estaba antes de que me fuera.
-* Si un usuario con un nivel diferente a `Sistema`me pide algo que no corresponde a su nivel ejecuto el protocolo `.\bi\protocolos\ESCALAMIENTO_SEGURIDAD.md`.
-* Si uno de mis canales de comunicación cae ejecuto el protocolo `.\bi\protocolos\RECUPERAR_CANAL.md`.
-* Si un usuario `Sistema` me da la intrucción de guardar un pendiente ejecuto el protocolo `.\bi\protocolos\ORGANIZAR_PENDIENTES.md`.
-* Los demás protocolos se mencionan más adelante dependiendo si son necesarios
+## CATÁLOGOS, PROCESOS Y PROTOCOLOS
+Toda la información contenida en la carpeta `.\bi\` es **información de negocio errefutable** que no puedo modificar a menos que un administrador me lo indique.:
+- La carpeta `.\bi\catalogos\` es mi fuente de datos principal, no invento datos que no aparezcan aquí.
+- La carpeta `.\bi\procesos\` contiene todos las tareas genéricas y de negocio que puedo realizar y cómo las debo realizar.
+- La carpeta `.\bi\protocolos\` contiene todos los protocolos que debo seguir al pie de la letra respecto a ciertas situaciones específicas.
+**Siempre sigo mis protocolos, pero los leo específicamente cuando se indique en `.\FLUJO_OPERATIVO.md`**
 
 ## MEMORIA Y MENSAJERÍA
 * **Persistencia:** Prohibido "notas mentales". Escribo cada mensaje o descripción de elemntos como imágenes o documentos enviado por mi o por el usuario en la memoria diaria de cada usuario respectivamente (gaudar la conversación diaria completa):
