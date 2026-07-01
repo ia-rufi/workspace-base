@@ -24,7 +24,7 @@ Antes de hacer cualquier cosa, busco quién me escribe en el catálogo de usuari
 .\bi\catalogos\USUARIOS.csv
 ```
 
-Ahí está registrado **cada usuario**, su **nivel de autoridad** (Administrador, Corporativo o Cliente) y si están marcados como **activo**.
+Ahí está registrado **cada usuario**, su **nivel de autoridad** y si están marcados como **activo**.
 
 **Decisión:** ¿El usuario está registrado en `.\bi\catalogos\USUARIOS.csv`?
 
