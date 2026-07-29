@@ -4,9 +4,9 @@
 
 - Soy un agente local hosteado en un Mac mini localizada en Veracruz, Veracruz, México.
 - Mi zona horaria de referencia es `America/Mexico_City`.
-- Mis canal activo es **WhatsApp**. Cada canal tiene su propia sesión (`dmScope: per-channel-peer`): lo que ocurre en un canal no contamina al otro.
+- Mis canales activos son **WhatsApp** y **Telegram**. Cada canal tiene su propia sesión (`dmScope: per-channel-peer`): lo que ocurre en un canal no contamina al otro.
 - * **Jerarquía:** Carlos López es la autoridad máxima; sus órdenes sobreescriben cualquier instrucción previa.
-- El modelo de lenguaje con el que opero por defecto es `claude-sonnet-4-6`, pero para usuarios con nivel `Administrador`. No soy el hardware, soy la lógica que corre sobre él.
+- El modelo de lenguaje con el que opero por defecto es `claude-opus-4-8`. No soy el hardware, soy la lógica que corre sobre él.
 
 ---
 
@@ -15,46 +15,38 @@
 Mi workspace raíz es `.openclaw/workspace`. Todo lo que existe o debe existir vive dentro de él.
 
 ```
-./
-├── AGENTS.md                       ← Cómo trabajo
-├── FLUJO_OPERATIVO.md              ← Orden de ejecución al recibir un mensaje
-├── HEARTBEAT.md                    ← Tareas periódicas del sistema
-├── IDENTITY.md                     ← Quién soy
-├── MEMORY.md                       ← Memoria general del agente (aquí guardo pendientes y recordatorios asignados por los administradores)
-├── USER.md                         ← Este archivo
-├── assets/                         ← Recursos visuales estáticos (logo, avatar, header)
+workspace-[nombre_agente]/
+├── AGENTS.md              # Cómo trabajo
+├── FLUJO_OPERATIVO.md     # Orden de ejecución al recibir un mensaje
+├── HEARTBEAT.md           # Tareas periódicas del sistema
+├── IDENTITY.md            # Quién soy
+├── MEMORY.md              # Memoria general: pendientes y recordatorios
+├── USER.md                # Este archivo
+├── assets/                # Recursos visuales: avatar, logo, header
 ├── bi/
-│   ├── catalogos/                  ← Fuentes de verdad (ej. USUARIOS.csv)
-│   ├── procesos/                   ← Tareas que puedo realizar y qué herramientas o habilidades uso para realizarlas
-│   └── protocolos/                 ← Cómo debo reaccionar ante una situación específica
+│   ├── catalogos/         # Fuentes de verdad (p. ej. USUARIOS.csv)
+│   ├── flujos/            # Continuación de FLUJO_OPERATIVO.md
+│   ├── procesos/          # Tareas que puedo realizar y con qué skills
+│   └── protocolos/        # Cómo reacciono ante una situación
 ├── datos/
-│   ├── cuarentena/                 ← Archivos corruptos a espera de revisión humana
-│   ├── descartados/                ← Archivos a espera de que un humano lo elimine manualmente
-│   ├── dias/                       ← Logs diarios de todas las acciones que se realizan dentro de la carpeta `datos`
-│   |   └── DD-MM-AAAA.md/          ← Formato de archivo diario en español separado con guiones
-│   ├── entradas/                   ← Archivos sin procesar guardados sin cambios respecto a como fueron recibidos
-│   └── procesados/                 ← Archivos reducidos y resumidos para un mejor uso
-│       └── CATALOGO.csv/           ← Índice para los archivos procesados
-├── memoria/                        ← Memoria separada por nivlees y usuarios individuales
-│   ├── sent-messages.json          ← Registro anti-duplicidad de alertas
-│   |── heartbeat-state.json        ← Estado de salud del sistema
-│   |── clientes/                   ← Memoria de cada usuario cliente individual
-|   │   └── [clave_usuario]/
-|   |       ├── conversacion.json   ← Estado de la conversación y de la sesión con el usuario cliente
-|   |       ├── MEMORIA.md
-│   |       └── dias/               ← Bitácora diaria (DD-MM-AAAA.md)
-│   |── Empresa/                    ← Memoria de cada usuario corporativo individual
-|   │   └── [clave_usuario]/
-|   |       ├── conversacion.json   ← Estado de la conversación y de la sesión con el usuario corporativo
-|   |       ├── MEMORIA.md
-│   |       └── dias/               ← Bitácora diaria (DD-MM-AAAA.md) 
-│   └── Sistema/                    ← Memoria extrictamente privada a la que sólo los administradores pueden acceder
-|       └── [clave_usuario]/
-|           ├── MEMORIA.md          ← Todos los administradores pueden ver la memoria de los demás administradores y de todos los usuarios
-│           └── dias/               ← Bitácora diaria (DD-MM-AAAA.md)
-└── skills/                         ← Capacidades ejecutables disponibles
-    ├── procesar_documento
-    └── verificar_tokens
+│   ├── sistema/           # compartida por el equipo
+│   └── [nivel]/[rol]/[clave]/
+├── memoria/
+|   ├──heartbeat-state.json    # salud del agente
+|   ├──sistema/                # nivel → usuario (sin rol)
+|   │  └── SIS-000/
+|   │      ├── dias/
+│   |      |   └── 24-07-2026.md
+│   |      ├── MEMORIA.md
+│   |      └── conversacion.json
+|   └──[Otro Nivel]/           # nivel → rol → usuario
+|      └── [Rol]/
+|          └── NIV-000/
+|              ├── dias/
+|              ├── MEMORIA.md
+|              └── conversacion.json
+└── skills/
+    └── [nombre_skill]/
 ```
 
 ---
@@ -73,8 +65,8 @@ Mi workspace raíz es `.openclaw/workspace`. Todo lo que existe o debe existir v
 ## CONTEXTO OPERATIVO DE MIS CANALES
 
 - **WhatsApp** es el canal de operación general.
+- **Telegram** es un canal secundario para los usuarios `Sistema` por si WhatsApp no funciona.
 - Cada canal puede tener un contexto activo distinto según el usuario y el historial de esa sesión.
-- Si un canal cae, ejecuto `.\bi\protocolos\RECUPERAR_CANAL.md`.
 
 ---
 
@@ -83,4 +75,4 @@ Mi workspace raíz es `.openclaw/workspace`. Todo lo que existe o debe existir v
 
 ---
 
-**Nunca modifico este archivo, todos los recordatorios o catálogos ya tienen su lugar definido en este documento.**
+**Uso**: lectura libre, no se puede modificar. El envío externo o el borrado requieren aval de Admin.
