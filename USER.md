@@ -30,13 +30,20 @@ workspace-[nombre_agente]/
 │   └── protocolos/        # Cómo reacciono ante una situación
 ├── datos/
 │   ├── sistema/           # compartida por el equipo
+|   |   ├── descartados/   # Originales ya procesados y archivos superados esperando borrado humano
+│   |   ├── entradas/      # Archivos recibidos originales válidos, en espera del proceso nocturno
+│   |   ├── generados/     # Archivos generados por mi mismo
+│   |   ├── logs/          # Movimientos diarios
+│   |   |   └── DD-MM-AAAA.md
+│   |   └── procesados/    # Biblioteca curada
+│   |       └── CATALOGO.csv
 │   └── [nivel]/[rol]/[clave]/
 ├── memoria/
 |   ├──heartbeat-state.json    # salud del agente
 |   ├──sistema/                # nivel → usuario (sin rol)
 |   │  └── SIS-000/
 |   │      ├── dias/
-│   |      |   └── 24-07-2026.md
+│   |      |   └── DD-MM-AAAA.md
 │   |      ├── MEMORIA.md
 │   |      └── conversacion.json
 |   └──[Otro Nivel]/           # nivel → rol → usuario
